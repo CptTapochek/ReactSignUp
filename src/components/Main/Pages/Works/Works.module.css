@@ -1,0 +1,241 @@
+#works h1 {
+  font-family: var(--header__font);
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 38px;
+  color: #000000;
+}
+
+#works .tasksContainer {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #D4D9DB;
+  border-radius: 8px;
+  padding: 32px 0px;
+  padding-bottom: 0px;
+  margin-top: 24px;
+}
+
+#works .tasksContainer .tasksContainerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #D4D9DB;
+  padding: 0px 26px;
+  padding-bottom: 20px;
+}
+
+#works .tasksContainer .tasksContainerTop h2 {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+}
+
+#works .tasksContainer .tasksContainerTop h2 p {
+  font-family: var(--secondary_font);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  color: #092733;
+  margin-left: 18px;
+}
+
+#works .tasksContainer .tasksContainerTop div {
+  display: flex;
+}
+
+#works .tasksContainer .tasksContainerTop div button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 16px;
+  background: #FFFFFF;
+  border: 1px solid #96A3A8;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+}
+
+#works .tasksContainer .tasksContainerTop div button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+#works .tasksContainer .tasksContainerTop div button:first-child {
+  margin-right: 12px;
+}
+
+#works .tasksContainer .tasksContainerTop div button:first-child p {
+  font-family: var(--secondary_font);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #38505A;
+  margin-left: 8px;
+}
+
+#works .tasksContainer .tasksContainerTop div button#taskContainerAdd {
+  background-color: #70BAD8;
+}
+
+#works .tasksContainer .tasksContainerTop div button#taskContainerAdd p {
+  font-family: var(--secondary_font);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #FFFFFF;
+  margin-left: 8px;
+  border-color: #FFFFFF;
+}
+
+#works .tasksContainer .tasksContainerMiddle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #D4D9DB;
+  padding: 20px 26px;
+}
+
+#works .tasksContainer .tasksContainerMiddle .tasksContainerMiddleLeft button {
+  padding: 17px 16px;
+  background: #FFFFFF;
+  border: 1px solid #D7DBDE;
+  border-width: 1px 0px 1px 0px;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px 0px 0px 8px;
+  font-family: var(--secondary_font);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #38505A;
+}
+
+#works .tasksContainer .tasksContainerMiddle .tasksContainerMiddleLeft button:hover {
+  cursor: pointer;
+  background-color: #DDE1E4;
+}
+
+#works .tasksContainer .tasksContainerMiddle .tasksContainerMiddleLeft button:first-child {
+  border-width: 1px 0px 1px 1px;
+  border-radius: 8px 0px 0px 8px;
+}
+
+#works .tasksContainer .tasksContainerMiddle .tasksContainerMiddleLeft button:last-child {
+  border-width: 1px 1px 1px 0px;
+  border-radius: 0px 8px 8px 0px;
+}
+
+#works .tasksContainer .tasksContainerMiddle .tasksContainerMiddleLeft button:nth-child(2) {
+  border-width: 1px 1px 1px 1px;
+  border-radius: 0px 0px 0px 0px;
+}
+
+#works .tasksContainer .tasksContainerMiddle .tasksContainerMiddleRight {
+  display: flex;
+  align-items: center;
+}
+
+#works .tasksContainer .tasksContainerMiddle .tasksContainerMiddleRight div {
+  display: flex;
+  align-items: center;
+  border: 1px solid #D7DBDE;
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+#works .tasksContainer .tasksContainerMiddle .tasksContainerMiddleRight div input {
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  font-family: var(--secondary_font);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #677982;
+}
+
+#works .tasksContainer .tasksContainerMiddle .tasksContainerMiddleRight > button {
+  display: flex;
+  align-items: center;
+  padding: 17px 16px;
+  background: #FFFFFF;
+  border: 1px solid #D7DBDE;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+  margin-left: 12px;
+}
+
+#works .tasksContainer .tasksContainerMiddle .tasksContainerMiddleRight > button p {
+  margin-left: 10px;
+  font-family: var(--secondary_font);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #38505A;
+}
+
+#works table {
+  border-collapse: separate;
+  width: 100%;
+  padding: 13px 26px;
+}
+
+#works table thead tr th {
+  border-bottom: 1px solid #D6DBDD;
+  padding-bottom: 14px;
+  text-align: left;
+}
+
+#works table thead tr th, 
+#works table thead tr th span,
+#works table tbody tr td,
+#works table tbody tr td span {
+  font-family: var(--secondary_font);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #677982;
+}
+
+#works table thead tr th span {
+  margin-right: 7px;
+}
+
+#works table tbody tr td span {
+  margin-left: 14px;
+}
+
+#works table tbody tr td {
+  padding: 13px 0px;
+}
+
+#works .workDescription {
+  margin-top: 24px;
+}
+
+#works .workDescription h3 {
+  font-family: var(--header__font);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: #000000;
+}
+
+#works .workDescription div {
+  margin-top: 14px 0px;
+}
+
+#works .workDescription p {
+  font-family: var(--secondary_font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000; 
+  margin: 12px 0px;
+}
+

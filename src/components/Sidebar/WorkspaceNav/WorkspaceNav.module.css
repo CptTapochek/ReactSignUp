@@ -1,0 +1,43 @@
+header#workspaceNav {
+  border: 1px solid #DDE1E4;
+  border-radius: 8px;
+  background-color: #EFF3F6;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 26px;
+}
+
+header#workspaceNav div.workspaceNavIdentifiers {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px; 
+  display: flex;
+  flex-direction: column;
+}
+
+header#workspaceNav div.workspaceNavIdentifiers h2 {
+  font-family: var(--secondary_font);
+}
+
+header#workspaceNav div.workspaceNavIdentifiers span {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 18px;
+  color: #000000;
+  font-family: var(--secondary_font);
+}
+
+header#workspaceNav button.workspaceNavButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+}
+
+header#workspaceNav button.workspaceNavButton:hover {
+  cursor: pointer;
+}
+

@@ -1,0 +1,52 @@
+[
+  {
+    "key": "ADw4HifBX7",
+    "name": "Dollar",
+    "currency": "USD"
+  },
+  {
+    "key": "YW0y9YdKqi",
+    "name": "Euro",
+    "currency": "EUR"
+  },
+  {
+    "key": "dt0vFn0Za8",
+    "name": "Australian dollar",
+    "currency": "AUD"
+  },
+  {
+    "key": "30OBGbGAO4",
+    "name": "Pound sterling",
+    "currency": "GBP"
+  },
+  {
+    "key": "wrJYgGYR5j",
+    "name": "Canadian dollar",
+    "currency": "CAD"
+  },
+  {
+    "key": "heGCnjoZxq",
+    "name": "Japanese yen",
+    "currency": "JPY"
+  },
+  {
+    "key": "bbJs00y1Fy",
+    "name": "Swiss franc",
+    "currency": "CHF"
+  },
+  {
+    "key": "AgAYCFa1a6",
+    "name": "Swiss franc",
+    "currency": "CHF"
+  },
+  {
+    "key": "I8ZweCIgnQ",
+    "name": "Renminbi",
+    "currency": "CNY"
+  },
+  {
+    "key": "UCQs4OFqqc",
+    "name": "Indian rupee",
+    "currency": "INR"
+  }
+]

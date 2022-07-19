@@ -1,0 +1,254 @@
+/* Side Bar */
+.side-bar {
+    float: left;
+    background-color: var(--light-blue);
+    /*position: fixed;*/
+    min-height: 100%;
+    overflow: hidden;
+}
+.side-bar__logo {
+    display: flex;
+    align-items: center;
+    margin: 8%;
+    width: 80%;
+}
+.__logo__title {
+    float: left;
+    font-family: var(--main-font);
+    font-weight: 500;
+    font-size: 22px;
+    color: #fff;
+    margin-left: 20px;
+}
+
+.activities_tree {
+    display: flex;
+    margin-left: 8%;
+    transition: .3s ease;
+}
+
+.shape_forms, .active_circle, .circle,
+.tick_circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s ease;
+}
+.shape_forms {
+    margin: -50px 0 0 3px;
+    flex-direction: column;
+}
+.active_circle, .circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+.active_circle:after, .active_circle:before,
+.circle:after, .circle:before{
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    transition: .3s ease;
+}
+.active_circle:after, .circle:after {
+    width: 10px;
+    height: 10px;
+    z-index: 2;
+}
+.active_circle:after {
+    background-color: var(--light-blue);
+}
+.active_circle:before, .circle:before{
+    width: 30px;
+    height: 30px;
+    z-index: 1;
+}
+.active_circle:before {
+    background-color: #EFF3F6;
+    border: 2px solid var(--light-blue);
+}
+.active_circle div, .circle div {
+    z-index: 0;
+    position: absolute;
+    border-radius: 50%;
+}
+.active_circle div {
+    width: 42px;
+    height: 42px;
+    background-color: #EFF3F6;
+}
+.circle:after {
+    background-color: silver;
+}
+.circle:before {
+    border: 2px solid silver;
+}
+.circle div{
+    width: 44px;
+    height: 44px;
+    background-color: var(--light-blue);
+}
+.tick_circle{
+    width: 32px;
+    height: 32px;
+    background-color: #E1EDF3;
+    border-radius: 50%;
+}
+.tick_circle:after{
+    content: "";
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 4px solid var(--light-blue);
+}
+.line {
+    width: 3px;
+    height: 70px;
+    background-color: silver;
+}
+.text_information {
+    margin: 40px 0 0 3%;
+    font-family: var(--main-font);
+    width: 88%;
+}
+.text_information .block {
+    height: 103px;
+}
+.action_title {
+    margin-bottom: 10px;
+    color: #fff;
+}
+.action_description{
+    color: silver;
+    width: 100%;
+}
+
+.sidebar_footer{
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    /*margin: 0 10% 0 10%;*/
+    color: silver;
+    position: fixed;
+    bottom: 5%;
+    font-family: var(--main-font);
+}
+.company_email{
+    margin-left: 30%;
+}
+.company_email:before{
+    content: '\2709';
+}
+
+button.cancelButton{
+    color: var(--light-blue);
+    cursor: pointer;
+    background-color: #fff;
+    outline: none;
+    border: none;
+    transition: .3s ease;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+button.cancelButton:active{
+    opacity: 75%;
+    transition: .3s ease;
+}
+
+/* Resize for different displays */
+@media screen and (max-width: 1200px) {
+    /* Side Bar */
+    .shape_forms {
+        margin: -50px 0 0 3px;
+    }
+    .active_circle, .circle {
+        width: 28px; /**/
+        height: 28px;
+    }
+    .active_circle:after, .circle:after {
+        width: 8px;
+        height: 8px;
+    }
+    .active_circle:before, .circle:before{
+        width: 26px;
+        height: 26px;
+    }
+    .active_circle div {
+        width: 38px;
+        height: 38px;
+    }
+    .circle div{
+        width: 40px;
+        height: 40px;
+    }
+    .tick_circle{
+        width: 28px;
+        height: 28px;
+    }
+    .tick_circle:after{
+        width: 28px;
+        height: 28px;
+        border: 3px solid var(--light-blue);
+    }
+    .line {
+        width: 2px;
+        height: 70px;
+    }
+    .text_information {
+        margin: 36px 0 0 3%;
+        font-size: 14px;
+    }
+    .text_information .block{
+        height: 98px;
+    }
+    .sidebar_footer{
+        font-size: 14px;
+    }
+    .company_email{
+        margin-left: 20%;
+    }
+    button.cancelButton{
+        padding: 6px 12px;
+        border-radius: 7px;
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 1050px){
+    .text_information {
+        margin: 39px 0 0 5%;
+    }
+    .company_email{
+        margin-left: 10%;
+    }
+}
+@media screen and (max-width: 900px){
+    .sidebar_footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .company_email{
+        margin-left: 0;
+    }
+    .copyright {
+        margin-bottom: 10px;
+    }
+    .sign_up_form_detail{
+        width: 370px;
+    }
+    .right_inputs {
+        margin-left: 10px;
+    }
+}
+@media screen and (max-height: 800px){
+    .progress_bar{
+        bottom: 5%;
+    }
+}
+@media screen and (max-width: 650px){
+    .side-bar{
+        display: none;
+    }
+}

@@ -1,0 +1,903 @@
+
+.completionForm{
+    display: grid;
+    grid-template-areas: "side_bar inputs";
+    grid-template-columns: 30% 70%;
+    width: 100%; height: 100vh;
+}
+
+/* Inputs form */
+.mainContent, .continueBTN, .mainLogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mainContent{
+    flex-direction: column;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+/* Standart forms */
+.formBlock{
+    font-family: var(--main-font);
+    width: 480px;
+}
+.formTitle{
+    font-size: 30px;
+    font-weight: bold;
+}
+.mainLogo {
+    color: var(--light-blue);
+    margin-bottom: 5%;
+}
+.mainLogo div{
+    width: 48px; height: 48px;
+}
+.formPrompt, .formTitle{
+    text-align: center;
+}
+.formPrompt{
+    color: #677982;
+}
+.form input{
+    width: 100%; height: 45px;
+    box-sizing: border-box;
+    padding: 10px 14px;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid #96A3A8;
+    margin-top: 5px;
+    font-family: inherit;
+    font-size: inherit;
+}
+.form input::placeholder{
+    font-size: 16px;
+    color: #677982;
+}
+.form{
+    margin-top: 10px;
+}
+.form label{
+    float: left;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.continueBTN {
+    float: left;
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    font-family: var(--main-font);
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 1px solid var(--light-blue);
+    background-color: var(--light-blue);
+    transition: .3s ease;
+}
+.continueBTN:active {
+    transition: .3s ease;
+    filter: opacity(60%);
+}
+
+/* Description */
+.textarea{
+    width: 100%; height: 130px;
+    box-sizing: border-box;
+    padding: 10px 14px;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid #96A3A8;
+    margin-top: 5px;
+    font-family: inherit;
+    font-size: inherit;
+    resize: none;
+}
+
+/* Upload documents */
+.uploadDocumentBlock{
+    margin-top: 5px;
+}
+label.documentLabel input[type="file"]{
+    position: absolute;
+    width: 100%; height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.uploadDocumentBlock, label.documentLabel{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+label.documentLabel {
+    position: relative;
+    border: 1px solid #96A3A8;
+    height: 130px;
+    border-radius: 8px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+label.setZ_Index{
+    z-index: 111;
+}
+.uploadDocumentBlock div{
+    font-size: 14px;
+}
+.documentRequest{
+    color: #ffc400;
+}
+div.uploadImage, .document, .topBlock,
+.documentImage, .bottomBlock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.uploadImage{
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background-color: #C5CCD0;
+    border: 5px solid #DDE1E4;
+}
+div.uploadImage:after{
+    content: '';
+    margin-top: 2px;
+    background-image: url("../../assets/icons/upload-cloud-gray.svg");
+    width: 25px; height: 25px;
+    background-size: 25px;
+    background-repeat: no-repeat;
+}
+div.uploadText{
+    font-size: 16px;
+    color: #677982;
+    margin-bottom: 10px;
+}
+div.uploadText span{
+    color: var(--light-blue);
+}
+div.uploadTextPrompt{
+    color: #677982;
+    font-size: 14px;
+}
+.document{
+    border: 1px solid #96A3A8;
+    width: 100%; height: 100px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    flex-direction: column;
+}
+.topBlock{
+    margin-top: -10px;
+    width: 100%;
+}
+.textBlock, .imgTextBlock{
+    margin: 10px;
+    width: 77%;
+}
+div.documentTitle{
+    width: 100%; height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 3px;
+    color: #38505A;
+    font-size: 15px;
+}
+div.documentSize{
+    font-size: 13px;
+    color: #677982;
+}
+.documentImage{
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background-color: #E1EDF3;
+}
+.documentImage:after{
+    content: '';
+    background-image: url("../../assets/icons/file.svg");
+    width: 14px; height: 17px;
+    background-repeat: no-repeat;
+    background-size: 14px;
+}
+.documentDelete{
+    background-image: url("../../assets/icons/delete-bin.svg");
+    width: 20px; height: 22px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    cursor: pointer;
+}
+.bottomBlock{
+    width: 100%;
+    margin-top: 10px;
+}
+div.loadingBar{
+    width: 70%;
+    position: relative;
+}
+div.loadingBarBlue{
+    position: absolute;
+    margin-right: 10%;
+    width: 100%;
+    background-color: var(--light-blue);
+}
+.animateLoading{
+    animation-name: loadingDocument;
+    animation-duration: 2s;
+    transition: .3s ease;
+}
+@keyframes loadingDocument {
+    from {width: 0;}
+    to {width: 100%;}
+}
+div.loadingBarBlue, div.loadingBarDisabled{
+    height: 8px;
+    border-radius: 4px;
+}
+div.loadingBarDisabled{
+    background-color: #EAF0F4;
+}
+div.loadingProcent{
+    width: 10%;
+    text-align: center;
+    color: #38505A;
+}
+
+/* Add user input input */
+input.addUserInput{
+    padding-right: 50px;
+}
+button.addUserBTN{
+    border: 1px solid #96A3A8;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    float: right;
+    position: absolute;
+    width: 50px;
+    height: 45px;
+    margin: 5px 0 0 -50px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-left: none;
+}
+div.searchIcon{
+    background-image: url("../../assets/icons/plus-grey.svg");
+    background-size: 16px;
+    width: 16px; height: 16px;
+    margin-left: 5px;
+    background-repeat: no-repeat;
+}
+
+/* Year input */
+div.yearInputBlock{
+    display: flex;
+    flex-direction: column;
+}
+div.calendarIcon{
+    position: absolute;
+    background-image: url("../../assets/icons/calendar-small.svg");
+    background-repeat: no-repeat;
+    z-index: 101;
+    margin: 40px 0 0 15px;
+    background-size: 20px;
+    width: 20px; height: 22px;
+}
+input.yearInput{
+    text-align: left;
+    position: relative;
+    padding-left: 50px;
+    font-size: 16px;
+    width: 480px;
+}
+
+/* Select form */
+.select{
+    margin-top: 5px;
+    width: 100%; height: 45px;
+    border: 1px solid #96A3A8;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 10px 14px;
+    cursor: pointer;
+    outline: none;
+}
+select option{
+    color: #000;
+}
+option.disabledOption, select.noneSelect{
+    color: #677982;
+}
+
+/* Upload Photos */
+.imagePreview, .rightImageBlock,
+.imgTopBlock, .imgLoadingStatus{
+    display: flex;
+}
+.imagePreview{
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #96A3A8;
+    width: 100%; height: 100px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+.equipmentImage{
+    width: 75px;
+    height: 75px;
+    border-radius: 4px;
+}
+.rightImageBlock{
+    width: 78%; height: 75px;
+    flex-direction: column;
+}
+.imgTopBlock{
+    justify-content: center;
+    margin-bottom: 5px;
+}
+.imgTopBlock .documentDelete{
+    margin: 0 -15px 0 10px;
+}
+.imgTextBlock{
+    margin: 3px 0 10px 0;
+    width: 90%;
+}
+.imgTextBlock .documentTitle{
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.imgTextBlock .documentSize{
+    font-size: 15px;
+}
+.imgLoadingStatus{
+    width: 100%;
+    align-items: center;
+}
+.imgLoadingStatus .loadingBar{
+    margin-left: 10px;
+    width: 80%;
+}
+.imgLoadingStatus .loadingProcent{
+    margin-left: 5px;
+}
+
+/* Radio input (privacy) */
+div.setPrivacy{
+    display: flex;
+    justify-content: flex-start;
+    height: 45px;
+    margin-top: -3px;
+}
+div.radioButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8%;
+}
+
+div.radioButton input{
+    width: 16px; height: 16px;
+    margin: 0 5px 0 0;
+    cursor: pointer;
+}
+div.radioButton label{
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Add tags */
+.tags{
+    margin-top: -3px;
+    box-sizing: border-box;
+    border: 1px solid #96A3A8;
+    width: 100%; height: 100px;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 15px;
+}
+.addTag, .tag{
+    float: left;
+    color: var(--light-blue);
+    border: 1px solid #E7EAED;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+.addTag{
+    cursor: pointer;
+}
+.addTagIcon{
+    float: right;
+    background-image: url("../../assets/icons/plus-blue.svg");
+    background-repeat: no-repeat;
+    background-size: 15px;
+    width: 15px; height: 15px;
+    margin-left: 5px;
+}
+
+/* Money Input */
+div.moneyInput{
+}
+.moneyInput input{
+    padding-left: 30px;
+}
+.dollarIcon{
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../../assets/icons/dollar.svg");
+    background-size: 25px;
+    margin: 6px 0 0 10px;
+    width: 25px; height: 45px;
+}
+select.selectCurrency{
+    position: absolute;
+    border: 1px solid #96A3A8;
+    outline: none;
+    border-left: none;
+    cursor: pointer;
+    text-align: center;
+    color: #092733;
+    font-size: 16px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 45px; width: 80px;
+    margin: 5px 0 0 400px;
+}
+
+
+/* Resize for different displays */
+@media screen and (max-width: 1200px) {
+    /* inputs form */
+    .formBlock{
+        width: 380px;
+    }
+    .formTitle{
+        font-size: 26px;
+        font-weight: normal;
+    }
+    .form input{
+        height: 35px;
+        padding: 8px 12px;
+        border-radius: 7px;
+    }
+    .form input::placeholder{
+        font-size: 14px;
+    }
+
+    /* Description */
+    .textarea{
+        padding: 8px 12px;
+        border-radius: 7px;
+    }
+
+    /* Upload documents */
+    label.documentLabel {
+        height: 120px;
+        border-radius: 7px;
+    }
+    div.uploadImage{
+        width: 35px; height: 35px;
+    }
+    div.uploadImage:after{
+        margin-top: 2px;
+        width: 23px; height: 23px;
+        background-size: 23px;
+    }
+    div.uploadText{
+        font-size: 15px;
+    }
+    div.uploadTextPrompt{
+        font-size: 13px;
+    }
+    .document, .imagePreview{
+        height: 90px;
+        border-radius: 7px;
+    }
+    .textBlock, .imgTextBlock{
+        width: 70%;
+    }
+    div.documentTitle{
+        margin-bottom: 1px;
+        font-size: 14px;
+    }
+    div.documentSize{
+        font-size: 13px;
+    }
+    .documentImage{
+        width: 35px; height: 35px;
+    }
+    .documentImage:after{
+        width: 14px; height: 17px;
+        background-size: 14px;
+    }
+    .documentDelete{
+        width: 18px; height: 20px;
+        background-size: 18px;
+    }
+    .bottomBlock{
+        margin-top: 10px;
+    }
+    div.loadingBarBlue, div.loadingBarDisabled{
+        height: 7px;
+    }
+    div.loadingProcent{
+        font-size: 13px;
+    }
+
+    /* Inventory choose option */
+    .imageBlock{
+        width: 240px;
+    }
+    .optionBlock{
+        padding: 12px;
+        border: 2px solid #AEB8BC;
+        border-radius: 7px;
+    }
+    .optionBlock a{
+        padding-top: 8px;
+        padding-bottom: 8px;
+        border-radius: 7px;
+        font-size: 14px;
+    }
+
+    /* Add user input input */
+    input.addUserInput{
+        padding-right: 40px;
+    }
+    button.addUserBTN{
+        width: 40px;
+        height: 35px;
+        margin: 5px 0 0 -40px;
+        border-top-right-radius: 7px;
+        border-bottom-right-radius: 7px;
+    }
+    div.searchIcon{
+        background-size: 15px;
+        width: 15px; height: 15px;
+    }
+
+    /* Year input */
+    div.calendarIcon{
+        margin: 36px 0 0 10px;
+        background-size: 18px;
+        width: 18px; height: 20px;
+    }
+    input.yearInput{
+        padding-left: 40px;
+        font-size: 15px;
+        width: 380px;
+    }
+
+    /* Select form */
+    .select{
+        border-radius: 7px;
+        font-size: 15px;
+        height: 35px;
+        padding: 6px 12px;
+    }
+
+    /* Upload Photo */
+    .imagePreview{
+        height: 90px;
+        margin-bottom: 10px;
+        border-radius: 7px;
+    }
+    .equipmentImage{
+        width: 70px;
+        height: 70px;
+    }
+    .rightImageBlock{
+        width: 75%; height: 70px;
+    }
+    .imgTopBlock{
+        margin-bottom: 5px;
+    }
+    .imgTopBlock .documentDelete{
+        margin: 0 -10px 0 10px;
+    }
+    .imgTextBlock{
+        margin: 3px 5px 10px 0;
+        width: 85%;
+    }
+    .imgTextBlock .documentTitle{
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+    .imgTextBlock .documentSize{
+        font-size: 14px;
+    }
+
+    /* Money Input */
+    .moneyInput input{
+        padding-left: 25px;
+    }
+    .dollarIcon{
+        background-size: 20px;
+        margin: 7px 0 0 10px;
+        width: 20px; height: 35px;
+    }
+    select.selectCurrency{
+        font-size: 15px;
+        border-bottom-right-radius: 7px;
+        border-top-right-radius: 7px;
+        height: 35px; width: 70px;
+        margin: 5px 0 0 310px;
+    }
+}
+@media screen and (max-width: 650px){
+    .completionForm{
+        grid-template-areas: "inputs";
+        grid-template-columns: 100%;
+    }
+    .form input{
+        font-size: 15px;
+    }
+    .formBlock{
+        width: 330px;
+        margin: 15% 0 10% 0;
+    }
+
+    /* Description */
+    .textarea{
+        font-size: 15px;
+    }
+
+    /* Year input */
+    input.yearInput{
+        font-size: 15px;
+        width: 330px;
+    }
+
+    /* Upload Photo */
+    .equipmentImage{
+        width: 64px; height: 64px;
+    }
+    .rightImageBlock{
+        width: 73%; height: 64px;
+    }
+    .imgTopBlock{
+        margin-bottom: 5px;
+    }
+    .imgTopBlock .documentDelete{
+        margin: 0 -5px 0 5px;
+    }
+    .imgTextBlock{
+        margin: 3px 5px 10px 10px;
+        width: 85%;
+    }
+    .imgTextBlock .documentTitle{
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .imgTextBlock .documentSize{
+        font-size: 13px;
+    }
+    .imgLoadingStatus .loadingProcent{
+        margin-left: 5px;
+    }
+
+    /* Money Input */
+    select.selectCurrency{
+        font-size: 15px;
+        border-bottom-right-radius: 7px;
+        border-top-right-radius: 7px;
+        height: 35px; width: 70px;
+        margin: 5px 0 0 260px;
+    }
+}
+@media screen and (max-width: 370px) {
+    .formBlock {
+        width: 250px;
+    }
+    .formTitle {
+        font-size: 20px;
+    }
+    .form input{
+        height: 30px;
+        padding: 6px 8px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+    .formPrompt{
+        font-size: 14px;
+    }
+    .mainLogo div, .mainLogo div svg{
+        width: 38px; height: 38px;
+    }
+    .continueBTN {
+        height: 30px;
+        font-size: 14px;
+        padding: 6px 15px;
+        border-radius: 5px;
+    }
+
+    /* Description */
+    .textarea{
+        padding: 6px 8px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    /* Upload documents */
+    label.documentLabel {
+        height: 100px;
+        border-radius: 5px;
+    }
+    div.uploadImage{
+        width: 27px; height: 27px;
+    }
+    div.uploadImage:after{
+        width: 17px; height: 17px;
+        background-size: 17px;
+    }
+    div.uploadText{
+        margin-top: -5px;
+        font-size: 14px;
+    }
+    div.uploadTextPrompt{
+        font-size: 12px;
+    }
+    .document, .imagePreview{
+        height: 70px;
+        border-radius: 5px;
+    }
+    .textBlock, .imgTextBlock{
+        width: 60%;
+    }
+    div.documentTitle{
+        margin-bottom: 1px;
+        font-size: 13px;
+    }
+    div.documentSize{
+        font-size: 12px;
+    }
+    .documentImage{
+        width: 27px; height: 27px;
+    }
+    .documentImage:after{
+        width: 12px; height: 15px;
+        background-size: 12px;
+    }
+    .documentDelete{
+        width: 16px; height: 18px;
+        background-size: 16px;
+    }
+    .bottomBlock{
+        margin-top: 5px;
+    }
+    div.loadingBarBlue, div.loadingBarDisabled{
+        height: 6px;
+    }
+    div.loadingProcent{
+        font-size: 12px;
+    }
+
+    /* Add user input input */
+    input.addUserInput{
+        padding-right: 30px;
+    }
+    button.addUserBTN{
+        width: 30px;
+        height: 30px;
+        margin: 5px 0 0 -30px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    div.searchIcon{
+        background-size: 14px;
+        width: 14px; height: 14px;
+        margin-left: 0;
+    }
+
+    /* Year input */
+    div.calendarIcon{
+        margin: 35px 0 0 9px;
+        background-size: 16px;
+        width: 16px; height: 18px;
+    }
+    input.yearInput{
+        padding-left: 30px;
+        font-size: 14px;
+        width: 250px;
+    }
+
+    /* Select form */
+    .select{
+        border-radius: 5px;
+        font-size: 14px;
+        height: 30px;
+        padding: 4px 8px;
+    }
+
+    /* Upload Photo */
+    .equipmentImage{
+        width: 55px;
+        height: 55px;
+        border-radius: 3px;
+    }
+    .rightImageBlock{
+        width: 70%; height: 55px;
+    }
+    .imgTopBlock{
+        margin-bottom: 0;
+    }
+    .imgTopBlock .documentDelete{
+        margin: 0 -2px 0 2px;
+    }
+    .imgTextBlock{
+        margin: 3px 5px 10px 5px;
+        width: 85%;
+    }
+    .imgTextBlock .documentTitle{
+        font-size: 13px;
+        margin-bottom: 2px;
+    }
+    .imgTextBlock .documentSize{
+        font-size: 12px;
+    }
+    .imgLoadingStatus{
+        width: 90%;
+    }
+    .imgLoadingStatus .loadingBar{
+        margin-left: 7px;
+    }
+
+    /* Money Input */
+    .moneyInput input{
+        padding-left: 25px;
+    }
+    .dollarIcon{
+        background-size: 20px;
+        margin: 7px 0 0 10px;
+        width: 20px; height: 30px;
+    }
+    select.selectCurrency{
+        font-size: 14px;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        height: 30px; width: 60px;
+        margin: 5px 0 0 190px;
+    }
+}
+
+.continueBTN:disabled,
+.continueBTN[disabled]{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: auto;
+}
+
+.validationText{
+    margin: 2px 0 0 0;
+    width: 100%; height: 15px;
+    font-size: 14px;
+    color: red;
+}
+
+.hide{
+    display: none;
+}
+
+/* red border for invalid inputs */
+input.invalidInput, select.invalidInput{
+    border-color: red;
+}
+
+/* Darkened Screen */
+.darkenedScreen{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 110;
+    background-color: black;
+    opacity: 50%;
+}
+

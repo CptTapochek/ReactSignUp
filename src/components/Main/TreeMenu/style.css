@@ -1,0 +1,104 @@
+.tree { 
+    margin: 1rem; 
+    font-size: 2rem;
+}
+
+.tree input {
+    position: absolute;
+    /* clip: rect(0, 0, 0, 0); */
+    opacity: 0;
+}
+
+.tree input ~ ul { 
+    display: none; 
+}
+
+.tree input:checked ~ ul { 
+    display: block; 
+}
+
+.tree li {
+    line-height: 1.2;
+    position: relative;
+    padding: 0 0 1em 1em;
+}
+
+.tree ul li { 
+    padding: 1em 0 0 1em; 
+}
+
+.tree > li:last-child { 
+    padding-bottom: 0; 
+}
+
+.tree_label {
+    position: relative;
+    display: inline-block;
+    background: #fff;
+}
+
+label.tree_label { 
+    cursor: pointer;
+    margin-bottom: 3px;
+    background-color: inherit;
+}
+
+label.tree_label:hover { 
+    color: #666; 
+}
+
+.tree li:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: block;
+    width: 0;
+    left: 1rem;
+    border-left: 1px solid #777;
+    content: "";
+}
+
+.tree_label:after {
+    position: absolute;
+    top: 0;
+    left: -1rem;
+    display: block;
+    height: 0.5em;
+    width: 0.5rem;
+    border-bottom: 1px solid #777;
+    border-left: 1px solid #777;
+    content: "";
+}
+
+.tree_label--first:after {
+    border-bottom: none !important;
+    border-left: none !important;
+}
+
+:checked ~ label.tree_label:after {
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid #777;
+    border-left: 1px solid #777;
+    bottom: 1.3rem;
+    height: auto;
+}
+
+:checked ~ label.tree_label:first-child:after {
+    border: none !important;
+}
+
+.tree li:last-child:before {
+    height: 1em;
+    bottom: auto;
+}
+
+.tree > li:last-child:before { 
+    display: none; 
+}
+
+.tree_custom {
+    display: block;
+    background: #eee;
+    padding: 1em;
+}

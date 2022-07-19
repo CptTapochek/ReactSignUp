@@ -1,0 +1,146 @@
+#navMenuSub {
+    border-width: 0px 1px 0px 1px;
+    border-style: solid;
+    border-color: #AEB8BC;
+    margin: 8px 0px;
+    background-color: #FFFFFF;
+    transform-origin: left;
+    transition: width 0.200s ease-in-out;
+    padding: 3.6rem 0rem 1rem 0rem;
+    width: 0px;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    will-change: width;
+}
+
+#navMenuSub h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 0px 1.5rem;
+    font-family: var(--secondary_font);
+}
+
+#navMenuSub.navMenuSubOpen {
+    width: 300px;
+}
+
+#navMenuSub ul {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 100%;
+    min-width: 300px;
+}
+
+#navMenuSub ul li {
+    margin: 0.75rem 0rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 28px;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    padding: 0rem 1.6rem;
+}
+
+#navMenuSub ul li > a:hover {
+    cursor: pointer;
+    background-color: #DDE1E4;
+}
+
+#navMenuSub ul li > a:hover > p {
+    color: #092733;
+}
+
+#navMenuSub ul li.activeLink > a {
+    cursor: pointer;
+    background-color: #DDE1E4;
+}
+
+#navMenuSub ul li.activeLink > a p {
+    color: #092733;
+}
+
+#navMenuSub ul li a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-radius: 6px;
+}
+
+#navMenuSub ul li a p {
+    display: flex;
+    flex-direction: row;
+    font-family: var(--secondary_font);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #38505A;
+    width: 100%;
+    padding: 8px 14px;
+}
+
+#navMenuSub ul li a span {
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+}
+
+#navMenuSub ul li a > span {
+    font-family: var(--secondary_font);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #38505A;
+    padding: 0.2rem 1rem;
+    background-color: #C5CCD0;
+    border-radius: 1.6rem;
+    height: fit-content;
+}
+
+#profileContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2px 20px;
+}
+
+#profileContainer h3 {
+    font-family: var(--secondary_font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #092733;
+}
+
+#profileContainer p {
+    font-family: var(--secondary_font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #677982;
+    
+}
+
+#profileContainer button {
+    border: none;
+    background-color: transparent;
+    opacity: 0.7;
+}
+
+#profileContainer button:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
